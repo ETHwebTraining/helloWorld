@@ -1,4 +1,4 @@
-window.addEventListener("DOMContentLoaded", main);
+document.addEventListener("DOMContentLoaded", main);
 
 
 function main() {
@@ -8,13 +8,17 @@ function main() {
     const input = document.getElementById('name');
     const greet2 = document.getElementById('greet2');
 
-    greet.addEventListener('click', () => {
-        hello.innerHTML = hello.innerHTML + ' hello World !'
-    })
+    greet.addEventListener('click', onhelloWorld)
+    greet2.addEventListener('click', onGreet)
 
-    greet2.addEventListener('click', () => {
+    function onhelloWorld() {
+        hello.innerHTML = hello.innerHTML + ' hello World !'
+    }
+
+
+    function onGreet() {
         const name = input.value;
-        hello.innerHTML = hello.innerHTML + ` hello ${name} !`
-    })
+        alert(`hello ${name}`)
+    }
 
 }
